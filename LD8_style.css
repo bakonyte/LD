@@ -1,0 +1,28 @@
+.vardas{
+    grid-area: vardas;
+}
+.apie{
+    grid-area: apie;
+}
+.faktai{
+    grid-area: faktai;
+}
+.igudziai{
+    grid-area: igudziai;
+}
+.main{
+    display: grid;
+    grid-template-areas: 'vardas vardas vardas'
+    'apie faktai igudziai';
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+    grid-gap: 30px;
+}
+.main> section{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width:100%;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding: 10px 0;
+}
