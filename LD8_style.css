@@ -26,3 +26,75 @@
     font-family: sans-serif;
     padding: 10px 0;
 }
+/* Stilius spausdinimui */
+
+@media print {
+    body {
+      font-family: "Times New Roman", serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+  
+    h1, h2, h3, h4, h5, h6 {
+      page-break-after: avoid;
+    }
+  
+    p, ul, ol, dl, table {
+      page-break-inside: avoid;
+    }
+  
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+  
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+  
+    img {
+      max-width: 100%;
+    }
+    
+    /* Nuoroda „Spausdinti“ */
+    .print-link {
+      display: none;
+    }
+  
+    /* Paslėpti naršyklės nuorodas spausdinimo versijoje */
+    a, nav, .navbar, .sidebar {
+      display: none !important;
+    }
+  
+    /* Išdėstyti tekstą vieną po kitu ir lygiuoti kairėje pusėje */
+    .main > section {
+      text-align: left;
+      margin: 0;
+      padding: 0;
+    }
+  
+    /* Papildomas stilius skirtas pakeisti grid struktūrą spausdinimo metu */
+    @media screen {
+      .main {
+        display: grid;
+        grid-template-areas:
+          'vardas'
+          'apie' 
+          'faktai' 
+          'igudziai'
+          'img';
+        background-color: rgb(0, 0, 0);
+        padding: 15px;
+        grid-gap: 30px;
+      }
+  
+      .apie, .faktai, .igudziai {
+        display: grid;
+      }
+    }
+  }
+  
+  
